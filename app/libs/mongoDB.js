@@ -1,4 +1,8 @@
 import mongoose from "mongoose";
+import dns from "node:dns";
+
+// Memaksa Node.js menggunakan DNS Google agar tidak ECONNREFUSED di Windows
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const connectMongoDB = async () => {
   try {
